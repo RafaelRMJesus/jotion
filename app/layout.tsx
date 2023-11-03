@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
-import { Inter, Poppins } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { ConvexClientProvider } from '@/components/providers/convex-provider'
+import { Toaster } from 'sonner'
 
 const font = Poppins({
   subsets: ['latin'],
@@ -44,6 +45,7 @@ export default function RootLayout({
             disableTransitionOnChange
             storageKey='jotion-theme-2'
           >
+            <Toaster position='bottom-right'/>
             {children}
           </ThemeProvider>
         </ConvexClientProvider>
